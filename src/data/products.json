@@ -1,0 +1,42 @@
+[
+    {
+        "id": "mannington-adura-max-dockside-sand",
+        "name": "Mannington Adura Max - Dockside Sand",
+        "category": "flooring",
+        "imageUrl": "/textures/wood-1.jpg",
+        "color": "#d2b48c",
+        "priceSqFt": 4.59
+    },
+    {
+        "id": "mannington-adura-max-seaport-surf",
+        "name": "Mannington Adura Max - Seaport Surf",
+        "category": "flooring",
+        "imageUrl": "/textures/wood-2.jpg",
+        "color": "#8b7355",
+        "priceSqFt": 4.59
+    },
+    {
+        "id": "shaw-floorté-pro-endura-plus",
+        "name": "Shaw Floorté Pro Endura Plus",
+        "category": "flooring",
+        "imageUrl": "/textures/wood-3.jpg",
+        "color": "#654321",
+        "priceSqFt": 3.89
+    },
+    {
+        "id": "sherwin-williams-naval",
+        "name": "Sherwin-Williams Naval SW 6244",
+        "category": "paint",
+        "imageUrl": "/textures/paint-blue.jpg",
+        "color": "#2f3d4c",
+        "priceSqFt": 0.50
+    },
+    {
+        "id": "sherwin-williams-alabaster",
+        "name": "Sherwin-Williams Alabaster SW 7008",
+        "category": "paint",
+        "imageUrl": "/textures/paint-white.jpg",
+        "color": "#f2f0e6",
+        "priceSqFt": 0.50
+    }
+]
