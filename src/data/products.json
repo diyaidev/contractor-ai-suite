@@ -38,5 +38,53 @@
         "imageUrl": "/textures/paint-white.jpg",
         "color": "#f2f0e6",
         "priceSqFt": 0.50
+    },
+    {
+        "id": "calacatta-sponda",
+        "name": "Calacatta Sponda Super Jumbo",
+        "category": "wall",
+        "imageUrl": "/images/products/calacatta-sponda-clean.png",
+        "color": "#f0f0f0",
+        "priceSqFt": 85.00
+    },
+    {
+        "id": "classic-bianca",
+        "name": "Classic Bianca Veins",
+        "category": "wall",
+        "imageUrl": "/images/products/classic-bianca-clean.png",
+        "color": "#f5f5f5",
+        "priceSqFt": 75.00
+    },
+    {
+        "id": "mandara-cocoa-bronze",
+        "name": "Mandara Knob/Pull (Cocoa Bronze)",
+        "category": "handle-knob",
+        "imageUrl": "/images/products/handle-mandara.png",
+        "color": "#6e4c35",
+        "priceSqFt": 0
+    },
+    {
+        "id": "harmon-knob-matte-black",
+        "name": "Harmon Knob (Matte Black)",
+        "category": "handle-knob",
+        "imageUrl": "/images/products/handle-harmon.png",
+        "color": "#1a1a1a",
+        "priceSqFt": 0
+    },
+    {
+        "id": "twisted-arch-champagne",
+        "name": "Twisted Arch Pull (Champagne)",
+        "category": "handle-arch",
+        "imageUrl": "/images/products/handle-twisted-arch.png",
+        "color": "#e2cba6",
+        "priceSqFt": 0
+    },
+    {
+        "id": "square-bar-matte-black",
+        "name": "Square Bar Pull (Matte Black)",
+        "category": "handle-bar",
+        "imageUrl": "/images/products/handle-square-bar.png",
+        "color": "#1a1a1a",
+        "priceSqFt": 0
     }
 ]

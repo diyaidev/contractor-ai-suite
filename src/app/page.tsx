@@ -1,6 +1,9 @@
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
 
 export default function Home() {
+  redirect('/visualizer');
+  /*
   return (
     <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
       <header style={{ marginBottom: '3rem' }}>
@@ -9,7 +12,7 @@ export default function Home() {
       </header>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-        {/* Interior Visualizer Card */}
+        {/!* Interior Visualizer Card *!/}
         <div className="card glass">
           <div style={{ height: '150px', background: 'linear-gradient(45deg, #3b82f6, #8b5cf6)', borderRadius: '8px', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <span style={{ fontSize: '3rem' }}>🛋️</span>
@@ -21,7 +24,7 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* Pool Estimator Card */}
+        {/!* Pool Estimator Card *!/}
         <div className="card glass">
           <div style={{ height: '150px', background: 'linear-gradient(45deg, #10b981, #3b82f6)', borderRadius: '8px', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <span style={{ fontSize: '3rem' }}>🏊</span>
@@ -33,7 +36,7 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* HVAC Triage Card */}
+        {/!* HVAC Triage Card *!/}
         <div className="card glass">
           <div style={{ height: '150px', background: 'linear-gradient(45deg, #f59e0b, #ef4444)', borderRadius: '8px', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <span style={{ fontSize: '3rem' }}>🔧</span>
@@ -47,4 +50,5 @@ export default function Home() {
       </div>
     </div>
   );
+  */
 }

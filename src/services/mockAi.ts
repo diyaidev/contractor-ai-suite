@@ -10,6 +10,8 @@ export interface SegmentationResult {
     maskUrl: string;
     detectedObjects: string[];
     estimatedSqFt: number;
+    wallPolygon?: { x: number, y: number }[]; // Precise wall boundary points
+    cabinetHandlePositions?: { x: number, y: number }[]; // Exact handle locations
 }
 
 export interface RemodelResult {
@@ -71,12 +73,49 @@ export const MockAIService = {
     // Visualizer
     async segmentImage(imageUrl: string): Promise<AIResponse<SegmentationResult>> {
         await delay(DELAY_MS);
+
+        // Check if this is a demo image by looking at the data URL or filename
+        // For demo purposes, we'll provide precise coordinates for uploaded images
+        const isDemoImage = imageUrl.includes('data:image') || imageUrl.includes('blob:');
+
+        // Default generic response
+        let wallPolygon: { x: number, y: number }[] | undefined;
+        let cabinetHandlePositions: { x: number, y: number }[] | undefined;
+
+        // For demo images, provide precise AI detection
+        // These coordinates are normalized (0-1 range) and will be scaled to actual canvas size
+        if (isDemoImage) {
+            // Precise wall polygon (avoiding floor and ceiling)
+            wallPolygon = [
+                { x: 0, y: 0.15 },      // Top left
+                { x: 0.25, y: 0.22 },   // Left wall inner top
+                { x: 0.25, y: 0.78 },   // Left wall inner bottom
+                { x: 0, y: 0.85 },      // Bottom left
+                { x: 1, y: 0.85 },      // Bottom right
+                { x: 0.75, y: 0.78 },   // Right wall inner bottom
+                { x: 0.75, y: 0.22 },   // Right wall inner top
+                { x: 1, y: 0.15 }       // Top right
+            ];
+
+            // Precise cabinet handle positions (typical kitchen cabinet layout)
+            cabinetHandlePositions = [
+                // Lower cabinets (left to right, 2 rows)
+                { x: 0.15, y: 0.65 }, { x: 0.28, y: 0.65 }, { x: 0.41, y: 0.65 }, { x: 0.54, y: 0.65 },
+                { x: 0.15, y: 0.75 }, { x: 0.28, y: 0.75 }, { x: 0.41, y: 0.75 }, { x: 0.54, y: 0.75 },
+                // Upper cabinets (if visible)
+                { x: 0.72, y: 0.45 }, { x: 0.85, y: 0.45 },
+                { x: 0.72, y: 0.55 }, { x: 0.85, y: 0.55 }
+            ];
+        }
+
         return {
             success: true,
             data: {
                 maskUrl: imageUrl,
-                detectedObjects: ['floor', 'wall_left', 'wall_right', 'ceiling'],
-                estimatedSqFt: Math.floor(Math.random() * 200) + 150
+                detectedObjects: ['floor', 'wall_left', 'wall_right', 'ceiling', 'cabinets'],
+                estimatedSqFt: Math.floor(Math.random() * 200) + 150,
+                wallPolygon,
+                cabinetHandlePositions
             }
         };
     },
